@@ -1,0 +1,22 @@
+n = int(input())
+text = 'H'
+
+# first top pyramid
+for i in range(1, (2*n)+1, 2):
+    print((i*text).center(2*n, " "))
+
+# upper middle part
+for i in range(1, n+2):
+    print(" "*((n)//2) + (n*text) + " "*(n*3) + (n*text))
+
+# middle part
+for i in range((n+1)//2):
+    print(" "*((n)//2) + (n*text) + text*(n*3) + (n*text))
+
+# lower middle part
+for i in range(1, n+2):
+    print(" "*((n)//2) + (n*text) + " "*(n*3) + (n*text))
+
+# final inverted pyramid
+for i in range((2*n)-1, 0, -2):
+    print(" "*(n*4) + (i*text).center(2*n, " "))
