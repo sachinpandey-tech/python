@@ -1,0 +1,19 @@
+def print_formatted(number):
+    # your code goes here
+    max_leng = len(str(bin(number))) - 2
+    
+    for i in range(number):
+        str_dec = str(i + 1)
+        str_oct = str(oct(i + 1))[2 : len(str(oct(i + 1)))]
+        str_hex = str(hex(i + 1).upper())[2 : len(str(hex(i + 1)))]
+        str_bin = str(bin(i + 1))[2 : len(str(bin(i + 1)))]
+        space_dec = str(" " * (max_leng - len(str_dec)))
+        space_oct = str(" " * (max_leng - len(str_oct) + 1))
+        space_hex = str(" " * (max_leng - len(str_hex) + 1))
+        space_bin = str(" " * (max_leng - len(str_bin) + 1))
+        
+        print(space_dec+str_dec+space_oct+str_oct+space_hex+str_hex+space_bin+str_bin)
+
+if __name__ == '__main__':
+    n = int(input())
+    print_formatted(n)
