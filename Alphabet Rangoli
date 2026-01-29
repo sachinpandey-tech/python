@@ -1,0 +1,15 @@
+def print_rangoli(size):
+    alpha = "abcdefghijklmnopqrstuvwxyz"
+    strls = alpha[0:size][::-1]
+    final = []
+    for i in range(1,size+1):
+        final.append('-'.join(list(strls[0:i]+strls[0:i-1][::-1])))
+    len_of_finalval = len(final[len(final)-1])
+    for i in range(size-1):
+        print(final[i].center(len_of_finalval,'-'))
+    for i in range(size-1,-1,-1):
+        print(final[i].center(len_of_finalval,'-'))
+
+if __name__ == '__main__':
+    n = int(input())
+    print_rangoli(n)
